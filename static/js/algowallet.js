@@ -50,7 +50,7 @@ const myAlgoWalletConnect = async () => {
     get_address_history.classList.remove("d-none");
     walletAddress.innerHTML = `${address}`;
     notification.innerHTML = `You are now connected, Proceed to Vote now`;
-    getTotalChoice.innerHTML += ` ${total} CHOICE`;
+    getTotalChoice.innerHTML += ` ${total.toFixed(2)} CHOICE`;
     connectWallet.classList.add("d-none");
     submit.innerHTML =
       '<button class="btn btn-primary text-white btn-md mt-3" id="submit" onclick="myAlgoWalletSign()">Submit</button>';
