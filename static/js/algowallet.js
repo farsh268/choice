@@ -4,7 +4,7 @@ const Token = {
 };
 
 const Port = "";
-const algoClient = new algosdk.Algodv2(Token, host, Port);
+const algodClient = new algosdk.Algodv2(Token, host, Port);
 const indexerClient = new algosdk.Indexer(
   Token,
   "https://testnet-algorand.api.purestake.io/idx2",
@@ -33,6 +33,7 @@ const myAlgoWalletConnect = async () => {
     const { address, name } = response[0]; //get name and address of the voter
 
     //get the last 5 transaction history of the connected address
+
     let transaction_history = await indexerClient
       .searchForTransactions()
       .address(address)
@@ -92,7 +93,7 @@ const myAlgoWalletSign = async () => {
 };
 
 const algoWalletSend = async (input, from, amount) => {
-  let params = await algoClient.getTransactionParams().do();
+  let params = await algodClient.getTransactionParams().do();
   let encoder = new TextEncoder();
   if (input == "blue") {
     try {
@@ -107,7 +108,9 @@ const algoWalletSend = async (input, from, amount) => {
         params
       );
       const signedTxn = await myAlgoConnect.signTransaction(txn.toByte());
-      const response = await algoClient.sendRawTransaction(signedTxn.blob).do();
+      const response = await algodClient
+        .sendRawTransaction(signedTxn.blob)
+        .do();
       return response;
     } catch (error) {
       console.error(error);
@@ -125,7 +128,9 @@ const algoWalletSend = async (input, from, amount) => {
         params
       );
       const signedTxn = await myAlgoConnect.signTransaction(txn.toByte());
-      const response = await algoClient.sendRawTransaction(signedTxn.blob).do();
+      const response = await algodClient
+        .sendRawTransaction(signedTxn.blob)
+        .do();
       return response;
     } catch (error) {
       console.error(error);
