@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
 
+
     <title>Choice Voting App</title>
   </head>
   <body>
@@ -36,13 +37,33 @@
         </div>
 
         <div class="text-center b-3" id="connect_wallet">
-          <button
-            class="btn btn-primary connect_wallet"
-            type="button"
-            onclick="myAlgoWalletConnect()"
-          >
-            Connect Wallet
-          </button>
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Connect a Wallet
+</button>
+
+<!-- Modal -->
+<div class="modal fade text-secondary" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="z-index:10000; ">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Connect a Wallet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="p-2 mode  border-bottom">
+        <img src="/image/Myalgo.svg" height="20px" alt="My Algo Wallet" class="mr-2">
+        <span id="algowallet" class="mode"  onclick="myAlgoWalletConnect()">My Algo Wallet</span> </div>
+      <div id="algosigner" class="p-3 border-bottom"> <img src="/image/Algo Signer.svg" class="mr-2 " height="20px"alt="AlgoSigner"><span id="algowallet" class="mode"  onclick="myAlgoWalletConnect()"> AlgoSigner</span></div>
+      <div id="algomobile" class="p-3 border-bottom">  <img src="/image/Mobile.svg" height="20px" class="mr-2" alt="Algorand Mobile Wallet"><span id="algowallet" class="mode"  onclick="myAlgoWalletConnect()">Mobile Wallet</span> </div>
+
+      <div class="mt-4 mode"> <a href="https://choice-coin.com/" target="_blank" role="button">Learn More about Choicecoin...</a></div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </nav>

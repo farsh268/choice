@@ -46,14 +46,24 @@
     </div>
   </div>
 </div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/algosdk@1.13.0-beta.1/dist/browser/algosdk.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/algo.js"></script>
     <script src="/js/algowallet.js"></script>
+
+    <script>
+      $(document).ready(function () {
+    // Close modal on button click
+    $(".mode").click(function () {
+    $("#exampleModalCenter").modal("hide");
+  });
+});
+
+    </script>
 
   </body>
 </html>
